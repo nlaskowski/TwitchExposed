@@ -1,0 +1,23 @@
+.top-games {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+    width: 90%;
+    margin: auto;
+}
+
+.game-container {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #dcdcdc;
+    min-height: 100px;
+    padding: 10px;
+}
+
+.game-text {
+    font-size: 2em;
+}
+
+.game-rank {
+    font-size: 2.5em;
+}
