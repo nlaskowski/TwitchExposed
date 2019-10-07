@@ -1,33 +1,29 @@
 import * as React from 'react';
 import './App.css';
+import { Game } from './components/Game';
+import { TopGames } from './components/TopGames';
 
-import { Game } from './components/Game'
+/* 
+
+This App component is the main or "top-layer" of code that does the initial rendering of code on the page. 
+The "<TopGames />"" piece of code you see renders in the code from the "render()" method seen in the 'TopGames.tsx' file!
+
+
+Try adding another "<TopGames />" on line 23 to see another TopGames component get loaded in!
+
+*/
 
 const App: React.FC = () => {
-
   return (
     <div>
       <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300&display=swap" rel="stylesheet"></link>
 
       <div className="top-games">
-      { getGames }
-      <Game gameName="Fornite" gameRank={1}/>
-      <Game gameName="Minecraft" gameRank={2}/>
-      <Game gameName="Apex Legends" gameRank={3}/>
-      <Game gameName="World of Warcraft" gameRank={4}/>
-      <Game gameName="Overwatch" gameRank={5}/>
-      <Game gameName="Borderlands" gameRank={1}/>
-      <Game gameName="League of Legends" gameRank={2}/>
-      <Game gameName="Monster Hunter World" gameRank={3}/>
-      <Game gameName="NHL 2020" gameRank={4}/>
-      <Game gameName="Game Name 10" gameRank={5}/>
-    </div>
+        <TopGames />
+
+      </div>
     </div>
   );
 }
 
 export default App;
-
-function getGames() {
-  //TODO: query Twitch API, grab top 10 games, display
-}
