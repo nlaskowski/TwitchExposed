@@ -17,7 +17,7 @@ const App: React.FC = () => {
   return (
     <div>
       <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300&display=swap" rel="stylesheet"></link>
-
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
       <div className="top-games">
         <TopGames />
 
