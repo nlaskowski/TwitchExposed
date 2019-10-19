@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Game } from './Game';
 import api from 'twitch-api-v5';
-import App from './App';
+//import App from './App';
 
 export interface TopGamesProps {
 
