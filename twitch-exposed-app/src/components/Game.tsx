@@ -13,6 +13,7 @@ export interface GameProps {
     gameName: string;
     gameRank: number;
     gameImage: string;
+    gameData:any;
 }
 
 export class Game extends React.Component<GameProps, { clicked: boolean }> {
@@ -60,7 +61,7 @@ export class Game extends React.Component<GameProps, { clicked: boolean }> {
                     <div className="game-text">{this.props.gameName}</div>
                 </div>
                 
-                { this.state.clicked ? <div className="game-data-container"><div onClick={ () => this.toggleDialog(false) }>CLICK HERE TO EXIT</div><GameData /></div> : null }
+                { this.state.clicked ? <div className="game-data-container"><div onClick={ () => this.toggleDialog(false) }>CLICK HERE TO EXIT</div><GameData gameName={this.props.gameName} /></div> : null }
             </div>
         );
     }

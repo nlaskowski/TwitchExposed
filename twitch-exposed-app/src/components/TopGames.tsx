@@ -27,11 +27,11 @@ export class TopGames extends React.Component<TopGamesProps, { topGames: any[]}>
         api.clientID = 's80s9vkvxrsm4vr4y0hp0i0cqf3413';
 
         api.games.top({limit: 10}, (error, results) => {
-            console.log(results);
+            //console.log(results);
             this.setState({topGames: results.top});
         });
 
-        //queryTwitchAPI();
+        queryTwitchAPI();
     }
 
     render() {
@@ -48,9 +48,11 @@ export class TopGames extends React.Component<TopGamesProps, { topGames: any[]}>
                 gameName={game.game.name}
                 gameRank={index + 1}
                 gameImage={game.game.box.large}
+                gameData={game}
             />)
+            //console.log(game);
         });
-
+        
         return (
             <div className="top-games">{games}</div>
         );
@@ -67,7 +69,7 @@ export class TopGames extends React.Component<TopGamesProps, { topGames: any[]}>
 function queryTwitchAPI(){
     api.clientID = 's80s9vkvxrsm4vr4y0hp0i0cqf3413';
 
-    api.users.usersByName({ users: "schrolo" }, (err, res) => {
-        console.log("Results of Twitch API Query!!!", res);
+    api.streams.live({game: "League of Legends"}, (error, results) => {
+        console.log("Results of Twitch API Query!!!", results);
     });
 }
