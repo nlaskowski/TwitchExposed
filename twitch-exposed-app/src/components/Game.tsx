@@ -10,9 +10,7 @@ The Game class renders each found top Game (from the "TopGames" Component) using
 */
 
 export interface GameProps {
-    gameName: string;
     gameRank: number;
-    gameImage: string;
     gameData:any;
 }
 
@@ -56,12 +54,12 @@ export class Game extends React.Component<GameProps, { clicked: boolean }> {
         return (
             <div>
                 <div className="game-container" onClick={ () => this.toggleDialog(true) }>
-                    <img src={this.props.gameImage}/>
+                    <img src={this.props.gameData.game.box.large} />
                     <div className="game-rank">{this.props.gameRank}</div>
-                    <div className="game-text">{this.props.gameName}</div>
+                    <div className="game-text">{this.props.gameData.game.name}</div>
                 </div>
                 
-                { this.state.clicked ? <div className="game-data-container"><div onClick={ () => this.toggleDialog(false) }>CLICK HERE TO EXIT</div><GameData gameName={this.props.gameName} /></div> : null }
+                { this.state.clicked ? <div className="game-data-container"><div onClick={ () => this.toggleDialog(false) }>CLICK HERE TO EXIT</div><GameData gameName={this.props.gameData.game.name} viewerCount={this.props.gameData.viewers} /></div> : null }
             </div>
         );
     }
