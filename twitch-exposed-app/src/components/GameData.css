@@ -8,3 +8,8 @@
     bottom: 0;
     margin: 5%;
 }
+
+.game-data {
+    overflow-x: scroll;
+    width: 100%;
+}
