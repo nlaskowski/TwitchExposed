@@ -42,14 +42,14 @@ export class GameData extends React.Component <GameDataProps, { streamData: any[
                 { this.state.streamData
                     .sort((stream1, stream2) => (stream2.viewers > stream1.viewers) ? 1 : -1)
                     .slice(0, 10)
-                    .map( (stream, index) => <div>{ index + 1 }   <span>{ stream.viewers }</span>   <span>{ stream.channel.display_name }</span></div>)
+                    .map( (stream, index) => <div>{ index + 1 }   <span>{ stream.viewers }</span>   <a href={stream.channel.url} target="_blank" >{ stream.channel.display_name }</a></div>)
                 }
                 <div>Top 10 streams by Follower Count: </div>
                 {
                     this.state.streamData
                     .sort((stream1, stream2) => (stream2.viewers > stream1.channel.followers) ? 1 : -1)
                     .slice(0, 10)
-                    .map( (stream, index) => <div>{ index + 1 }   <span>{ stream.channel.followers }</span>   <span>{ stream.channel.display_name }</span></div>)
+                    .map( (stream, index) => <div>{ index + 1 }   <span>{ stream.channel.followers }</span>   <a href={stream.channel.url} target="_blank">{ stream.channel.display_name }</a></div>)
                 }
             </div>)
     }
