@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import { TopGames } from './components/TopGames';
+import bgImage from '../src/img/twitch_banner.png';
 
 /* 
 
@@ -18,6 +19,8 @@ const App: React.FC = () => {
       <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300&display=swap" rel="stylesheet"></link>
 	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"></link>
       
+      <div className="bg-styles"></div>
+      <div>Twitch Exposed</div>
       <div className="top-games">
         <TopGames />
       </div>

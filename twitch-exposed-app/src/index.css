@@ -1,5 +1,5 @@
 html {
-  background-color: #955aed;
+  background-color: transparent !important;
 }
 body {
   margin: 0;
@@ -8,7 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #955aed !important;
+  background-image: linear-gradient(to right, #7810f1 , #bf7aff) !important;
 }
 
 code {
