@@ -51,12 +51,14 @@ export class Game extends React.Component<GameProps, { clicked: boolean }> {
             On line 63, this is ternary syntax, which is a fancy shorthand version of an if-else statement! ---> { IF SOMETHING ? WHAT TO DO IF TRUE : WHAT TO DO IF FALSE }
                 In our case, if the state of our Game component is clicked (or this.state.clicked == true), then we show some HTML and a <GameData /> component!
         */
+       console.log(this.props.gameData);
         return (
             <div>
                 <div className="game-container" onClick={ () => this.toggleDialog(true) }>
-                    <img src={this.props.gameData.game.box.large} />
+                    <img className="game-img" src={this.props.gameData.game.box.large} />
                     <div className="game-rank">{this.props.gameRank}</div>
-                    <div className="game-text">{this.props.gameData.game.name}</div>
+                    <span className="game-text">{this.props.gameData.game.name}</span>
+                    <span className="game-viewers">{this.props.gameData.viewers} viewers</span>
                 </div>
                 
                 { this.state.clicked ? <div className="game-data-container"><div onClick={ () => this.toggleDialog(false) }>CLICK HERE TO EXIT</div><GameData gameName={this.props.gameData.game.name} viewerCount={this.props.gameData.viewers} /></div> : null }

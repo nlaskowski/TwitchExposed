@@ -12,7 +12,7 @@ export class TopStreamer extends React.Component<TopStreamerProps, { }> {
     render() {
         if(this.props.streamerIndex == 1){
             return(
-                <div>
+                <div className="top-streamer">
                     { this.props.streamerIndex }.
 
                     <ReactPlayer 

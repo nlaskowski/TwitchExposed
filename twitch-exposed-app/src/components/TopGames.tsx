@@ -48,9 +48,7 @@ export class TopGames extends React.Component<TopGamesProps, { topGames: any[]}>
             />)
         });
         
-        return (
-            <div className="top-games">{games}</div>
-        );
+        return (games);
     }
 }
 

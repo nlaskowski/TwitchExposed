@@ -24,7 +24,7 @@ export class GameData extends React.Component <GameDataProps, { streamData: any[
    componentDidMount(){
     api.clientID = 's80s9vkvxrsm4vr4y0hp0i0cqf3413';
 
-    api.streams.live({game: "League of Legends"}, (error, results) => {
+    api.streams.live({ game: this.props.gameName }, (error, results) => {
         console.log(results);
         this.setState({
             streamData:results.streams
@@ -40,6 +40,7 @@ export class GameData extends React.Component <GameDataProps, { streamData: any[
                 <div>Total Viewer Count: {this.props.viewerCount}</div>
 
                 <div>Top 10 streams by Viewer Count: </div>
+                <div className="game-topten">
                 { this.state.streamData
                     .sort((stream1, stream2) => (stream2.viewers > stream1.viewers) ? 1 : -1)
                     .slice(0, 10)
@@ -50,7 +51,10 @@ export class GameData extends React.Component <GameDataProps, { streamData: any[
                                                 streamerUrl={stream.channel.url}
                                             />)
                 }
+                </div>
+                
                 <div>Top 10 streams by Follower Count: </div>
+                <div className="game-topten">
                 {
                     this.state.streamData
                     .sort((stream1, stream2) => (stream2.viewers > stream1.channel.followers) ? 1 : -1)
@@ -62,6 +66,7 @@ export class GameData extends React.Component <GameDataProps, { streamData: any[
                                                 streamerUrl={stream.channel.url}
                                             />)
                 }
+                </div>
             </div>)
     }
 }
