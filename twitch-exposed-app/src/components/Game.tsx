@@ -61,7 +61,10 @@ export class Game extends React.Component<GameProps, { clicked: boolean }> {
                     <span className="game-viewers">{this.props.gameData.viewers} viewers</span>
                 </div>
                 
-                { this.state.clicked ? <div className="game-data-container"><div onClick={ () => this.toggleDialog(false) }>CLICK HERE TO EXIT</div><GameData gameName={this.props.gameData.game.name} viewerCount={this.props.gameData.viewers} /></div> : null }
+                { this.state.clicked ? (<div className="game-data-container">
+                                            <GameData gameName={this.props.gameData.game.name} viewerCount={this.props.gameData.viewers} />
+                                            <div className="game-data-exit" onClick={ () => this.toggleDialog(false) }>X</div>
+                                        </div>) : null }
             </div>
         );
     }

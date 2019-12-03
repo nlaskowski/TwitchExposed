@@ -13,27 +13,26 @@ export class TopStreamer extends React.Component<TopStreamerProps, { }> {
         if(this.props.streamerIndex == 1){
             return(
                 <div className="top-streamer">
-                    { this.props.streamerIndex }.
-
+                    <span>{ this.props.streamerIndex }. { this.props.streamerCount }</span>
+                    <a href={ this.props.streamerUrl } target="_blank" >{ this.props.streamerDisplayName }</a>
+                    
                     <ReactPlayer 
                         url={ this.props.streamerUrl } 
                         playing 
-                        width="640px"
-                        height="320px"
+                        width="auto"
+                        height="90%"
                         allowfullscreen="false"
                         muted
                     />
 
-                    <span>{ this.props.streamerCount }</span>
-                    <a href={ this.props.streamerUrl } target="_blank" >{ this.props.streamerDisplayName }</a>
+                    
                 </div>
             );
         }
         else {
             return(
                 <div>
-                    { this.props.streamerIndex }.
-                    <span>{ this.props.streamerCount }</span>
+                    <span>{ this.props.streamerIndex }. { this.props.streamerCount }</span>
                     <a href={ this.props.streamerUrl } target="_blank" >{ this.props.streamerDisplayName }</a>
                 </div>
             );
