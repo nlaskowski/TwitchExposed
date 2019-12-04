@@ -10,10 +10,10 @@ const App: React.FC = () => {
       
       <div className="bg-styles">
         <div className="app-title">Twitch Exposed</div>
-        <div className="app-subtitle">Your favorite games.. exposed.</div>
+        <div className="app-subtitle">Your favorite games... exposed.</div>
       </div>
       <div className="app-banner">
-        <div>Refresh Data</div>
+        <div> </div>
       </div>
       <div className="top-games">
         <TopGames />
